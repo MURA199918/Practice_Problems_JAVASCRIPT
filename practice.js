@@ -348,3 +348,51 @@ console.log("id: "+id);
         }
     }
 }
+
+//1. While
+{
+    let n = Math.floor(Math.random() * 10);
+
+    let powerOfTwo = 1;      
+    let i = 0;
+   
+    while(i<=n){
+        console.log(i + " " + powerOfTwo);  
+        powerOfTwo = 2 * powerOfTwo;    
+        i = i+1;            
+    } 
+}
+
+//3. WHILE
+{
+    let headsCount = 0;
+    let tailsCount = 0;
+    while( (headsCount == 11) || (tailsCount == 11)){
+        let toss = (Math.floor(Math.random() * 2) == 0) ? 'heads' : 'tails';
+        if(toss == 'heads'){
+            headsCount++;
+        }else{
+            tailsCount++;
+        }
+    }
+    console.log("count reached");  
+}
+
+//4. WHILE
+{
+    let sum = 100;
+    let toss = (Math.floor(Math.random() * 2) == 0) ? 'win' : 'loss';
+    while(sum<=0 || sum>=200){
+        if(toss == 'win'){
+            sum = sum+5;
+        }
+        else{
+            sum = sum-5;
+        }
+    }
+    if(sum<=0){
+        console.log("Lost");
+    }else{
+        console.log("Won");
+    }
+}
