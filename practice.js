@@ -396,3 +396,63 @@ console.log("id: "+id);
         console.log("Won");
     }
 }
+
+//2. FUNCTION
+{
+    function isPalindrome(n) {    
+      let divisor = 1; 
+      while (n / divisor >= 10) 
+         divisor *= 10; 
+  
+      while (n != 0) { 
+        let leading = n / divisor;  
+        let trailing = n % 10; 
+  
+        if (leading != trailing)   
+            return false; 
+  
+        n = (n % divisor) / 10; 
+  
+        divisor = divisor / 100; 
+      } 
+     return true; 
+    } 
+    let n = Math.floor(Math.random() * 1000000);
+    let check = isPalindrome(n);
+    if(check == 'true'){
+        console.log(n+" is a palindrome");
+    }else{
+        console.log(n+" is not a palindrome");
+    }
+}
+
+//3. FUNCTION
+{
+    let n = Math.floor(Math.random() * 1000000);
+    let reverse = 0;
+    function palindrome(n){
+        while(n!=0){
+            let remainder = n%10;
+            reverse = reverse*10 + remainder;
+            n = n/10;
+        }
+	    return reverse;
+    }
+
+    function prime(n){
+        let flag = true;
+        for(let i=2; i<=n-1; i++){
+            if (n % i == 0) { 
+                flag = false;
+                break; 
+           } 
+        }
+        if (flag == true) 
+        console.log(n + " is prime"); 
+        else
+        console.log(n + " is not prime"); 
+    }
+    console.log(prime(n));
+    var number = palindrome(n);
+    console.log(prime(number));
+}
