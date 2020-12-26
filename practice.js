@@ -2,7 +2,7 @@ console.log("welcome to practice problems of javascript!!!");
 let id = Math.floor(Math.random() * 10);
 console.log("id: "+id);
 
-//1.
+//1. MINIMUM AND MAXIMUM
 {
     let num1 = Math.floor(Math.random() * 999);
     let num2 = Math.floor(Math.random() * 999);
@@ -15,7 +15,7 @@ console.log("id: "+id);
     console.log("Minimum: "+MIN+" Maximum: "+MAX);
 }
 
-//2.
+//2. DATE CALCULATION
 {
     var startDate = "03/20/2020";
     var endDate = "06/20/2020";
@@ -37,20 +37,20 @@ console.log("id: "+id);
     }
 }
 
-//3.
+//3. LEAP YEAR
 {
     let year = 2015;
     let check = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
     console.log("Is "+year+" a leap year: "+check);
 }
 
-//4.
+//4. TOSS
 {
     let toss = (Math.floor(Math.random() * 2) == 0) ? 'heads' : 'tails';
     console.log("It is "+toss);
 }
 
-//5.
+//5. NUMBER IN WORDS
 {
     let number = Math.floor(Math.random() * 10);
     if(number == 1){
@@ -76,7 +76,7 @@ console.log("id: "+id);
     }
 }
 
-//6.
+//6. DAY IN WEEK
 {
     let min = 0;
     let max = 7;
@@ -99,7 +99,7 @@ console.log("id: "+id);
     }
 }
 
-//7.
+//7. UNITS AND HUNDREDS
 {
     let num = Math.floor(Math.random() * 9999);
     if(num < 10){
@@ -113,7 +113,7 @@ console.log("id: "+id);
     }
 }
 
-//8.
+//8. MIN AND MAX
 {
     let a = Math.floor(Math.random() * 10);
     let b = Math.floor(Math.random() * 10);
@@ -128,7 +128,7 @@ console.log("id: "+id);
     console.log("Minimum: "+MIN+" Maximum: "+MAX);
 }
 
-//1. Case
+//1. Case IN NUMBER
 {
     let number = Math.floor(Math.random() * 10);
     switch(number)
@@ -168,7 +168,7 @@ console.log("id: "+id);
     }
 }
 
-//2. Case
+//2. Case IN WEEKDAY
 {
     let min = 0;
     let max = 7;
@@ -201,7 +201,7 @@ console.log("id: "+id);
     }
 }
 
-//3. Case
+//3. Case IN UNITS AND HUNDREDS
 {
     let num = Math.floor(Math.random() * 9999);
     let variable = null;
@@ -233,7 +233,7 @@ console.log("id: "+id);
     }
 }
 
-//4. Case
+//4. Case IN FEET INCH CALCULATION
 {
     const FEET_TO_INCH = 1;
     const INCH_TO_FEET = 2;
@@ -262,7 +262,7 @@ console.log("id: "+id);
     }
 }
 
-//1. FOR
+//1. FOR IN 2 POWER N
 {
     let n = Math.floor(Math.random() * 10);
 
@@ -275,7 +275,7 @@ console.log("id: "+id);
     }
 }
 
-//2. FOR
+//2. FOR IN HARMONIC NUMBER
 {
     let harmonic = 1; 
     let n = Math.floor(Math.random() * 10);
@@ -286,7 +286,7 @@ console.log("id: "+id);
     console.log("Harmonic number "+harmonic);
 }
 
-//3. FOR
+//3. FOR IN PRIME NUMBERS
 {
     var i, flag = true; 
     let n = Math.floor(Math.random() * 100);
@@ -302,7 +302,7 @@ console.log("id: "+id);
         console.log(n + " is not prime"); 
 }
 
-//4. FOR
+//4. FOR IN PRIME
 {
     let n1 = Math.floor(Math.random() * 100);
     let n2 = Math.floor(Math.random() * 100);
@@ -327,7 +327,7 @@ console.log("id: "+id);
     }
 }
 
-//5. FOR
+//5. FOR IN FACTORIAL
 {
     var ans=1; 
     let n= Math.floor(Math.random() * 10);
@@ -338,7 +338,7 @@ console.log("id: "+id);
     console.log("Factorial of number n is: "+ans);
 }
 
-//6. FOR
+//6. FOR IN FACTORS
 {
     let num = Math.floor(Math.random() * 100);
     console.log("Factors of number "+num+" are: ");
@@ -349,7 +349,7 @@ console.log("id: "+id);
     }
 }
 
-//1. While
+//1. While IN 2 POWER N
 {
     let n = Math.floor(Math.random() * 10);
 
@@ -363,7 +363,7 @@ console.log("id: "+id);
     } 
 }
 
-//3. WHILE
+//3. WHILE IN TOSS
 {
     let headsCount = 0;
     let tailsCount = 0;
@@ -378,7 +378,7 @@ console.log("id: "+id);
     console.log("count reached");  
 }
 
-//4. WHILE
+//4. WHILE IN GAMBLING
 {
     let sum = 100;
     let toss = (Math.floor(Math.random() * 2) == 0) ? 'win' : 'loss';
@@ -397,7 +397,7 @@ console.log("id: "+id);
     }
 }
 
-//2. FUNCTION
+//2. FUNCTION IN PALINDROME
 {
     function isPalindrome(n) {    
       let divisor = 1; 
@@ -426,13 +426,43 @@ console.log("id: "+id);
     }
 }
 
-//3. FUNCTION
+//2. FUNCTION IN TEMPERATURE
+{
+    const FIND_degF = 1;
+    const FIND_degC = 2;
+    let min = 1;
+    let max = 3;
+
+    function temperatureCheck(){
+        let userInput = Math.floor(Math.random() * (max - min + 1)) + min;
+        switch(userInput){
+            case 1:
+                let degC = Math.floor(Math.random() * 100);
+                var degF = (degC*(9/5)) + 32;
+                console.log("Farenhiet temperature: "+degF);
+                break;
+            case 2:
+                let maximum = 212;
+                let minimum = 32;
+                let deg1F = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+                var deg1C = (degF-32)*(5/9);
+                console.log("Celcius temperature: "+deg1C);
+                break;
+            default:
+                console.log("Invalid input");
+        }
+    }
+    console.log(temperatureCheck())
+}
+
+//3. FUNCTION IN 2 FUNCTIONS
 {
     let n = Math.floor(Math.random() * 1000000);
-    let reverse = 0;
-    function palindrome(n){
+    function palindrome(){
+        var remainder;
+        var reverse = 0;
         while(n!=0){
-            let remainder = n%10;
+            remainder = n%10;
             reverse = reverse*10 + remainder;
             n = n/10;
         }
@@ -452,7 +482,8 @@ console.log("id: "+id);
         else
         console.log(n + " is not prime"); 
     }
+
     console.log(prime(n));
-    var number = palindrome(n);
+    let number = palindrome();
     console.log(prime(number));
 }
