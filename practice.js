@@ -261,3 +261,90 @@ console.log("id: "+id);
              console.log("Invalid input");
     }
 }
+
+//1. FOR
+{
+    let n = Math.floor(Math.random() * 10);
+
+    let powerOfTwo = 1;      
+
+   
+    for(let i=0; i<=n; i++){
+        console.log(i + " " + powerOfTwo);  
+        powerOfTwo = 2 * powerOfTwo;                
+    }
+}
+
+//2. FOR
+{
+    let harmonic = 1; 
+    let n = Math.floor(Math.random() * 10);
+
+    for (let i = 2; i <= n; i++) { 
+        harmonic += (1 / i); 
+    } 
+    console.log("Harmonic number "+harmonic);
+}
+
+//3. FOR
+{
+    var i, flag = true; 
+    let n = Math.floor(Math.random() * 100);
+    for(i = 2; i <= n - 1; i++) 
+        if (n % i == 0) { 
+            flag = false; 
+            break; 
+        } 
+          
+    if (flag == true) 
+        console.log(n + " is prime"); 
+    else
+        console.log(n + " is not prime"); 
+}
+
+//4. FOR
+{
+    let n1 = Math.floor(Math.random() * 100);
+    let n2 = Math.floor(Math.random() * 100);
+    let n3 = Math.floor(Math.random() * 100);
+    let n4 = Math.floor(Math.random() * 100);
+    let arr = [n1, n2, n3, n4];
+    var numbers2 = arr.map(myFunction);
+
+    function myFunction(value) {
+        var flag = true;
+        for(i = 2; i <= value - 1; i++){ 
+           if (value % i == 0) { 
+                flag = false;
+                break; 
+           } 
+        }
+               
+        if (flag == true) 
+             console.log(value + " is prime"); 
+        else
+             console.log(value + " is not prime"); 
+    }
+}
+
+//5. FOR
+{
+    var ans=1; 
+    let n= Math.floor(Math.random() * 10);
+              
+    for (var i = 2; i <= n; i++) {
+        ans = ans * i; 
+    }
+    console.log("Factorial of number n is: "+ans);
+}
+
+//6. FOR
+{
+    let num = Math.floor(Math.random() * 100);
+    console.log("Factors of number "+num+" are: ");
+    for(let i = 1; i <= num; i++) {
+        if(num % i == 0) {
+            console.log(i);
+        }
+    }
+}
