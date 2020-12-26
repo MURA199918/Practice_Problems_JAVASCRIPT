@@ -127,3 +127,137 @@ console.log("id: "+id);
     let MIN = Math.min.apply(Math, arr);
     console.log("Minimum: "+MIN+" Maximum: "+MAX);
 }
+
+//1. Case
+{
+    let number = Math.floor(Math.random() * 10);
+    switch(number)
+    {
+         case 0:
+              console.log("ZERO");
+              break;
+         case 1:
+              console.log("ONE");
+              break;
+         case 2:
+              console.log("TWO");
+              break;
+         case 3:
+              console.log("THREE");
+              break;
+         case 4:
+              console.log("FOUR");
+              break;
+         case 5:
+              console.log("FIVE");
+              break;
+         case 6:
+              console.log("SIX");
+              break;
+         case 7:
+              console.log("SEVEN");
+              break;
+         case 8:
+              console.log("EIGHT");
+              break;
+         case 9:
+              console.log("NINE");
+              break;
+         default:
+              console.log("Not a Single Digit Number");
+    }
+}
+
+//2. Case
+{
+    let min = 0;
+    let max = 7;
+    var dayNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    switch(dayNumber)
+    {
+         case 0:
+              console.log("Sunday");
+              break;
+         case 1:
+              console.log("Monday");
+              break;
+         case 2:
+              console.log("Tuesday");
+              break;
+         case 3:
+              console.log("Wednesday");
+              break;
+         case 4:
+              console.log("Thursday");
+              break;
+         case 5:
+              console.log("Friday");
+              break;
+         case 6:
+              console.log("Saturday");
+              break;
+         default:
+            console.log("Invalid day number");
+    }
+}
+
+//3. Case
+{
+    let num = Math.floor(Math.random() * 9999);
+    let variable = null;
+    if(num < 10){
+        variable = 0;
+    }else if(num >=10 && num < 100){
+        variable = 1;
+    }else if(num >=100 && num < 1000){
+        variable = 2;
+    }else{
+        variable = 3;
+    }
+    switch(variable)
+    {
+         case 0:
+              console.log("unit");
+              break;
+         case 1:
+              console.log("tens");
+              break;
+         case 2:
+              console.log("hundreds");
+              break;
+         case 3:
+              console.log("thousands");
+              break;
+         default:
+             console.log("Invalid input");
+    }
+}
+
+//4. Case
+{
+    const FEET_TO_INCH = 1;
+    const INCH_TO_FEET = 2;
+    const FEET_TO_METER = 3;
+    const METER_TO_FEET = 4;
+    let min = 1;
+    let max = 5;
+    var userInput = Math.floor(Math.random() * (max - min + 1)) + min;
+    let userValue = Math.floor(Math.random() * 10);
+    switch(userInput)
+    {
+         case 1:
+              console.log("Feet to inch value is: "+userValue*12);
+              break;
+         case 1:
+              console.log("Inch to  Feet value is: "+userValue*0.0833);
+              break;
+         case 2:
+              console.log("Feet to meter value is: "+userValue/3.2808);
+              break;
+         case 3:
+              console.log("Meter to feet value is: "+userValue*3.2808);
+              break;
+         default:
+             console.log("Invalid input");
+    }
+}
