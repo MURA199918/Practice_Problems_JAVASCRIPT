@@ -582,3 +582,127 @@ console.log("id: "+id);
         console.log("No such numbers");
     }
 }
+
+//1. MAPS Roll Dice
+{
+    let mapDice = new Map();
+    for(let i=0; i<6; i++){
+        let dice = Math.floor(Math.random() * 6);
+        mapDice.set(i+1, dice);
+    }
+    console.log(mapDice);
+}
+
+//2. MAPS Roll dice and count
+{
+    let mapDice = new Map();
+    let diceNumberCount = new Map();
+    let count1 =0;
+    let count2 = 0;
+    let count3 = 0;
+    let count4 = 0;
+    let count5 = 0;
+    let count6 = 0;
+    let MapValues = new Array();
+    for(let i=0; i<30; i++){
+        let dice = Math.floor(Math.random() * 6)+1;
+        mapDice.set(i+1, dice);
+        if(dice==1){
+            count1++;
+            diceNumberCount.set(dice, count1);
+        }else if(dice==2){
+            count2++;
+            diceNumberCount.set(dice, count2);
+        }else if(dice==3){
+            count3++;
+            diceNumberCount.set(dice, count3);
+        }else if(dice==4){
+            count4++;
+            diceNumberCount.set(dice, count4);
+        }else if(dice==5){
+            count5++;
+            diceNumberCount.set(dice, count5);
+        }else{
+            count6++;
+            diceNumberCount.set(dice, count6);
+        }
+    }
+    console.log(diceNumberCount);
+    for(let i=1; i<=6; i++){
+        MapValues[i] = diceNumberCount.get(i);
+    }
+    var max = Math.max.apply(null, MapValues);
+    var min = Math.min.apply(null, MapValues);
+    for(let i=1; i<=6; i++){
+        if(max == diceNumberCount.get(i)){
+            console.log("Dice roll with maximum count: "+i);
+        }
+        if(min == diceNumberCount.get(i)){
+            console.log("Dice roll with minimum count: "+i);
+        }
+    }
+}
+
+//2. MAPS Birthday count
+{
+    let birthCountMap = new Map();
+    let sameBirthDay = new Map();
+    let JanCount = 0;
+    let FebCount = 0;
+    let MarchCount = 0;
+    let AprilCount = 0;
+    let MayCount = 0;
+    let JuneCount = 0;
+    let JulyCount = 0;
+    let AugCount = 0;
+    let SpetCount = 0;
+    let OctCount = 0;
+    let NovCount = 0;
+    let DecCount = 0;
+    for(let i=1; i<=50; i++){
+        let birthMonth = Math.floor(Math.random() * 12)+1;
+        birthCountMap.set(i, birthMonth);
+    }
+    for(let j=1; j<=50; j++){
+        if(birthCountMap.get(j) == 1){
+            JanCount++;
+        }else if(birthCountMap.get(j) == 2){
+            FebCount++;
+        }else if(birthCountMap.get(j) == 3){
+            MarchCount++;
+        }else if(birthCountMap.get(j) == 4){
+            AprilCount++;
+        }else if(birthCountMap.get(j) == 5){
+            MayCount++;
+        }else if(birthCountMap.get(j) == 6){
+            JuneCount++;
+        }else if(birthCountMap.get(j) == 7){
+            JulyCount++;
+        }else if(birthCountMap.get(j) == 8){
+            AugCount++;
+        }else if(birthCountMap.get(j) == 9){
+            SpetCount++;
+        }else if(birthCountMap.get(j) == 10){
+            OctCount++;
+        }else if(birthCountMap.get(j) == 11){
+            NovCount++;
+        }else{
+            DecCount++;
+        }
+    }
+    sameBirthDay.set("Jan", JanCount);
+    sameBirthDay.set("Feb", FebCount);
+    sameBirthDay.set("March", MarchCount);
+    sameBirthDay.set("April", AprilCount);
+    sameBirthDay.set("May", MayCount);
+    sameBirthDay.set("June", JuneCount);
+    sameBirthDay.set("July", JulyCount);
+    sameBirthDay.set("August", AugCount);
+    sameBirthDay.set("September", SpetCount);
+    sameBirthDay.set("Oct", OctCount);
+    sameBirthDay.set("Nov", NovCount);
+    sameBirthDay.set("Dec", DecCount);
+
+    console.log("Number of People with same birth month: ");
+    console.log(sameBirthDay);
+}
