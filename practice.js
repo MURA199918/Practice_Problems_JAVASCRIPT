@@ -456,34 +456,129 @@ console.log("id: "+id);
 }
 
 //3. FUNCTION IN 2 FUNCTIONS
-{
-    let n = Math.floor(Math.random() * 1000000);
-    function palindrome(){
+/*{
+    let n = Math.floor(Math.random() * 1000);
+    let num1 = n;
+    let num2 = n;
+    function palindrome(num1){
         var remainder;
         var reverse = 0;
-        while(n!=0){
-            remainder = n%10;
+        while(num1!=0){
+            remainder = num1%10;
             reverse = reverse*10 + remainder;
-            n = n/10;
+            num1 = num1/10;
         }
 	    return reverse;
     }
 
-    function prime(n){
+    function prime(num2){
         let flag = true;
-        for(let i=2; i<=n-1; i++){
-            if (n % i == 0) { 
+        for(let i=2; i<=num2-1; i++){
+            if (num2 % i == 0) { 
                 flag = false;
                 break; 
            } 
         }
         if (flag == true) 
-        console.log(n + " is prime"); 
+        console.log(num2 + " is prime"); 
         else
-        console.log(n + " is not prime"); 
+        console.log(num2 + " is not prime"); 
     }
 
     console.log(prime(n));
-    let number = palindrome();
+    let number = palindrome(n);
     console.log(prime(number));
+}*/
+
+//1. ARRAYS Find second Minimum and Maximum
+{
+    var arr = new Array();
+    for(let i=0; i<10; i++){
+        arr[i] = Math.floor(Math.random() * 999);
+    }
+    var newArray = arr;
+    var max = Math.max.apply(null, newArray);
+    newArray.splice(newArray.indexOf(max), 1);
+    var secondMax = Math.max.apply(null, newArray);
+    console.log("2nd Maximum: "+secondMax);
+
+    var min = Math.min.apply(null, arr);
+    arr.splice(arr.indexOf(min), 1);
+    var secondMin = Math.min.apply(null, arr);
+    console.log("2nd Minimum: "+secondMin);
+}
+
+//2. ARRAYS Find second max and min by sorting
+{
+    var arr = new Array();
+    for(let i=0; i<10; i++){
+        arr[i] = Math.floor(Math.random() * 999);
+    }
+    var sortedArray = arr.sort();
+    console.log("2nd Maximum: "+sortedArray[8]);
+    console.log("2nd Minimum: "+sortedArray[1]);
+}
+
+//3. ARRAYS find factors and store in array
+{
+    let num = Math.floor(Math.random() * 100);
+    let arr = new Array();
+    let index = 0;
+    console.log("Factors of number "+num+" are: ");
+    for(let i = 1; i <= num; i++) {
+        if(num % i == 0) {
+            arr[index] = i;
+            index++; 
+        }
+    }
+    console.log(arr);
+}
+
+//4. ARRAYS Find zero sum
+{
+    var arr = new Array();
+    let max = 10;
+    let min = -10;
+    for(let i=0; i<10; i++){
+        arr[i] = Math.floor(Math.random() * (max-min+1))+min;
+    }
+    let found = true;
+    for (let j=0; j<10-2; j++) 
+    { 
+        for (let k=j+1; k<10-1; k++) 
+        { 
+            for (let l=k+1; l<10; l++) 
+            { 
+                if (arr[j]+arr[k]+arr[l] == 0) 
+                { 
+                    console.log(arr[j]+" "+arr[k]+" "+arr[l]);
+                    console.log("Zero sum found"); 
+                    found = true; 
+                } 
+            } 
+        } 
+    }
+    if(found == 'false'){
+        console.log("Zero sum Doesnt exist");
+    } 
+}
+
+//5. ARRAYS Numbers with repeated digits
+{
+    var arr = new Array();
+    var newArray = new Array();
+    let index = 0;
+    for(let i=0; i<10; i++){
+        arr[i] = Math.floor(Math.random() * 100);
+        if(arr[i]%11 == 0){
+            newArray[index] = arr[i];
+            index++;
+        }
+    }
+    if(newArray.length != 0){
+        console.log("Numbers with repeated digits are: "+newArray);
+    }
+    else{
+        console.log("No such numbers");
+    }
 }
