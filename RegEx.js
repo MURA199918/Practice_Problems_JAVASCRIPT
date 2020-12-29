@@ -21,3 +21,14 @@ console.log("Welcome to validation using RegEx.");
         console.log("UC2 - Incorrect Validation");
     }
 }
+
+//UC3 - PINCODE
+{
+    let regEx_PINCODE = RegExp('^[1-9]{1}[0-9]{5}[0-9]{1}$');
+    var pincode1 = '400076B';
+    if(regEx_PINCODE.test(pincode1)){
+        console.log("UC3 - Pincode validated successfully");
+    }else{
+        console.log("UC3 - Incorrect Validation");
+    }
+}
