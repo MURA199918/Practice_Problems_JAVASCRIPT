@@ -32,3 +32,14 @@ console.log("Welcome to validation using RegEx.");
         console.log("UC3 - Incorrect Validation");
     }
 }
+
+//UC4 - PINCODE
+{
+    let regEx_PINCODE = RegExp('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$');
+        var pincode1 = '400 076';
+        if(regEx_PINCODE.test(pincode1)){
+            console.log("UC4 - Pincode validated successfully");
+        }else{
+            console.log("UC4 - Incorrect Validation");
+        }
+}
